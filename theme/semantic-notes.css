@@ -1,20 +1,14 @@
 .note {
   margin: 20px 0;
-  padding: 15px; /* تقليل الحشو قليلاً ليناسب الهواتف */
+  padding: 15px 20px;
   color: var(--fg);
   background-color: var(--quote-bg);
-  border-right: 0.3em solid var(--quote-border); /* جعل الخط على اليمين للعربية */
-  border-left: none;
-  /* إزالة الخطوط العلوية والسفلية إذا كنت تفضل النمط التقليدي للـ sidebar */
-  border-block-start: none;
-  border-block-end: none;
-}
-
-/* إصلاح العرض للهواتف */
-@media screen and (max-width: 750px) {
-  .note {
-    margin: 10px 5px;
-    padding: 10px;
-    font-size: 0.9em; /* تصغير الخط قليلاً ليعطي مساحة أكبر */
-  }
+  /* إزالة الخطوط العلوية والسفلية تماماً */
+  border-block-start: none !important;
+  border-block-end: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  /* استبدالها بخط جانبي أيمن فقط ليعطي شكل الملاحظة العربية */
+  border-right: 5px solid var(--quote-border) !important;
+  border-left: none !important;
 }
