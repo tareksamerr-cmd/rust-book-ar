@@ -1,0 +1,22 @@
+/* دعم اللغة العربية واتجاه النص */
+html {
+    direction: rtl;
+    text-align: right;
+}
+
+/* إصلاح اتجاه القائمة الجانبية */
+.sidebar {
+    left: auto !important;
+    right: 0 !important;
+}
+
+.content {
+    margin-right: 300px; /* حسب عرض القائمة لديك */
+    margin-left: auto;
+}
+
+/* تحسين الخط العربي */
+body, section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.8;
+}
