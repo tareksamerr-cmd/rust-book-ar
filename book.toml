@@ -37,12 +37,12 @@ use-boolean-and = true
 "ch20-02-multithreaded.html" = "ch21-02-multithreaded.html"
 "ch20-03-graceful-shutdown-and-cleanup.html" = "ch21-03-graceful-shutdown-and-cleanup.html"
 
-# Do not sync this preprocessor; it is for the HTML renderer only.
+# تم تعديل الأوامر هنا لتجنب تعليق الـ GitHub Actions
 [preprocessor.trpl-note]
-command = "cargo run --manifest-path packages/mdbook-trpl/Cargo.toml --bin mdbook-trpl-note"
+command = "mdbook-trpl-note"
 
 [preprocessor.trpl-listing]
-command = "cargo run --manifest-path packages/mdbook-trpl/Cargo.toml --bin mdbook-trpl-listing"
+command = "mdbook-trpl-listing"
 output-mode = "default"
 
 [rust]
