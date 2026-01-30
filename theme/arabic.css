@@ -1,22 +1,35 @@
-/* دعم اللغة العربية واتجاه النص */
-html {
+/* ضبط اتجاه الصفحة بالكامل */
+:root {
     direction: rtl;
-    text-align: right;
 }
 
-/* إصلاح اتجاه القائمة الجانبية */
-.sidebar {
+body {
+    text-align: right;
+    font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif; /* خط القاهرة ممتاز للعربية */
+}
+
+/* إصلاح الأيقونات والأزرار في الشريط العلوي */
+.left-buttons {
+    float: right !important;
+}
+
+.right-buttons {
+    float: left !important;
+}
+
+/* جعل القائمة الجانبية تظهر من اليمين */
+#sidebar {
     left: auto !important;
     right: 0 !important;
 }
 
-.content {
-    margin-right: 300px; /* حسب عرض القائمة لديك */
-    margin-left: auto;
+#content {
+    margin-left: 0 !important;
+    margin-right: 300px; /* يعتمد على عرض السايدبار */
 }
 
-/* تحسين الخط العربي */
-body, section {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.8;
+/* تنسيق الأكواد البرمجية لتبقى من اليسار لليمين */
+code, pre {
+    direction: ltr !important;
+    text-align: left !important;
 }
