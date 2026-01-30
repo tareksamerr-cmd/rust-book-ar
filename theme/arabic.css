@@ -1,42 +1,40 @@
-/* 1. ضبط الاتجاه العام */
-html, body {
-    direction: rtl;
-    text-align: right;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* لمنع التمرير الأفقي المزعج */
-}
+/* دعم العربية والاتجاه */
+:root { direction: rtl; }
+html, body { direction: rtl; text-align: right; margin: 0; padding: 0; }
 
-/* 2. حل مشكلة النص المضغوط على الموبايل */
+/* إصلاح العرض على الشاشات الصغيرة (الجوال) */
 @media screen and (max-width: 750px) {
-    /* إلغاء الهوامش التي تضغط النص */
+    /* إلغاء الهوامش الجانبية تماماً */
     #content {
         margin-right: 0 !important;
         margin-left: 0 !important;
-        padding: 10px 20px !important;
-        width: 100% !important;
+        padding: 15px !important;
+        width: 100vw !important; /* استخدام كامل عرض الشاشة */
+        max-width: 100% !important;
     }
 
-    /* التأكد من أن الحاوية الرئيسية تأخذ كامل العرض */
     .page-wrapper {
         padding-right: 0 !important;
+        padding-left: 0 !important;
     }
 
-    /* إخفاء القائمة الجانبية تماماً على الموبايل إلا عند فتحها */
+    /* إخفاء القائمة الجانبية في جهة اليمين بعيداً عن النص */
     #sidebar {
         left: auto !important;
-        right: -300px; /* دفعها خارج الشاشة يميناً */
+        right: -300px; /* دفعها لليمين خارج الشاشة */
         transition: right 0.3s ease;
     }
 
+    /* عند فتح القائمة الجانبية */
     .sidebar-visible #sidebar {
-        right: 0 !important; /* إظهارها عند النقر على الزر */
+        right: 0 !important;
     }
 }
 
-/* 3. تنسيق الأكواد لتبقى واضحة */
+/* تنسيق الأكواد لتبقى من اليسار لليمين ولا تضغط النص */
 pre, code {
     direction: ltr !important;
     text-align: left !important;
-    white-space: pre-wrap; /* لجعل الكود ينزل لسطر جديد بدل الخروج عن الشاشة */
+    white-space: pre-wrap;
+    word-break: break-all;
 }
