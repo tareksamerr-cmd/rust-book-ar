@@ -1,17 +1,25 @@
-/* إجبار المحتوى على أخذ كامل العرض في الجوال */
+/* منع التمرير الأفقي وإصلاح العرض */
+* {
+    box-sizing: border-box; /* يضمن أن الحشو لا يزيد من عرض العنصر */
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* يمنع الـ scroll الجانبي تماماً */
+}
+
+/* إصلاح عرض الحاوية الرئيسية في الجوال */
 @media screen and (max-width: 750px) {
     #content main {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-        width: 100% !important;
-        display: block !important;
-    }
-
-    /* منع أي عنصر من تجاوز عرض الشاشة */
-    .page-wrapper, .page {
-        padding: 0 !important;
+        padding: 10px !important;
         margin: 0 !important;
+        width: 100% !important;
+        overflow-wrap: break-word; /* كسر الكلمات الطويلة التي تسبب التمرير */
+    }
+    
+    .note {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        width: 100% !important;
     }
 }
