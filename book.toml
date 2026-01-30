@@ -3,6 +3,7 @@
 
 [book]
 title = "The Rust Programming Language"
+language = "ar"
 authors = ["Steve Klabnik", "Carol Nichols", "Chris Krycho", "Contributions from the Rust Community"]
 
 [output.html]
