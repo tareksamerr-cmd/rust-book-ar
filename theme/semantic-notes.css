@@ -1,13 +1,20 @@
-/*
-  This is copied directly from the styles for blockquotes, because notes were
-  historically rendered *as* blockquotes. This keeps the presentation of them
-  identical while updating the presentation.
-*/
 .note {
   margin: 20px 0;
-  padding: 0 20px;
+  padding: 15px; /* تقليل الحشو قليلاً ليناسب الهواتف */
   color: var(--fg);
   background-color: var(--quote-bg);
-  border-block-start: 0.1em solid var(--quote-border);
-  border-block-end: 0.1em solid var(--quote-border);
+  border-right: 0.3em solid var(--quote-border); /* جعل الخط على اليمين للعربية */
+  border-left: none;
+  /* إزالة الخطوط العلوية والسفلية إذا كنت تفضل النمط التقليدي للـ sidebar */
+  border-block-start: none;
+  border-block-end: none;
+}
+
+/* إصلاح العرض للهواتف */
+@media screen and (max-width: 750px) {
+  .note {
+    margin: 10px 5px;
+    padding: 10px;
+    font-size: 0.9em; /* تصغير الخط قليلاً ليعطي مساحة أكبر */
+  }
 }
