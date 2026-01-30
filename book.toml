@@ -43,9 +43,9 @@ use-boolean-and = true
 [preprocessor.trpl-note]
 command = "mdbook-trpl-note"
 
-[preprocessor.trpl-listing]
-command = "mdbook-trpl-listing"
-output-mode = "default"
+# [preprocessor.trpl-listing]
+# command = "mdbook-trpl-listing"
+# output-mode = "default"
 
 [rust]
 edition = "2021"
