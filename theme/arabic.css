@@ -1,35 +1,42 @@
-/* ضبط اتجاه الصفحة بالكامل */
-:root {
+/* 1. ضبط الاتجاه العام */
+html, body {
     direction: rtl;
-}
-
-body {
     text-align: right;
-    font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif; /* خط القاهرة ممتاز للعربية */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* لمنع التمرير الأفقي المزعج */
 }
 
-/* إصلاح الأيقونات والأزرار في الشريط العلوي */
-.left-buttons {
-    float: right !important;
+/* 2. حل مشكلة النص المضغوط على الموبايل */
+@media screen and (max-width: 750px) {
+    /* إلغاء الهوامش التي تضغط النص */
+    #content {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        padding: 10px 20px !important;
+        width: 100% !important;
+    }
+
+    /* التأكد من أن الحاوية الرئيسية تأخذ كامل العرض */
+    .page-wrapper {
+        padding-right: 0 !important;
+    }
+
+    /* إخفاء القائمة الجانبية تماماً على الموبايل إلا عند فتحها */
+    #sidebar {
+        left: auto !important;
+        right: -300px; /* دفعها خارج الشاشة يميناً */
+        transition: right 0.3s ease;
+    }
+
+    .sidebar-visible #sidebar {
+        right: 0 !important; /* إظهارها عند النقر على الزر */
+    }
 }
 
-.right-buttons {
-    float: left !important;
-}
-
-/* جعل القائمة الجانبية تظهر من اليمين */
-#sidebar {
-    left: auto !important;
-    right: 0 !important;
-}
-
-#content {
-    margin-left: 0 !important;
-    margin-right: 300px; /* يعتمد على عرض السايدبار */
-}
-
-/* تنسيق الأكواد البرمجية لتبقى من اليسار لليمين */
-code, pre {
+/* 3. تنسيق الأكواد لتبقى واضحة */
+pre, code {
     direction: ltr !important;
     text-align: left !important;
+    white-space: pre-wrap; /* لجعل الكود ينزل لسطر جديد بدل الخروج عن الشاشة */
 }
