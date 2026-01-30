@@ -1,40 +1,17 @@
-/* دعم العربية والاتجاه */
-:root { direction: rtl; }
-html, body { direction: rtl; text-align: right; margin: 0; padding: 0; }
-
-/* إصلاح العرض على الشاشات الصغيرة (الجوال) */
+/* إجبار المحتوى على أخذ كامل العرض في الجوال */
 @media screen and (max-width: 750px) {
-    /* إلغاء الهوامش الجانبية تماماً */
-    #content {
-        margin-right: 0 !important;
+    #content main {
         margin-left: 0 !important;
-        padding: 15px !important;
-        width: 100vw !important; /* استخدام كامل عرض الشاشة */
-        max-width: 100% !important;
+        margin-right: 0 !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        width: 100% !important;
+        display: block !important;
     }
 
-    .page-wrapper {
-        padding-right: 0 !important;
-        padding-left: 0 !important;
+    /* منع أي عنصر من تجاوز عرض الشاشة */
+    .page-wrapper, .page {
+        padding: 0 !important;
+        margin: 0 !important;
     }
-
-    /* إخفاء القائمة الجانبية في جهة اليمين بعيداً عن النص */
-    #sidebar {
-        left: auto !important;
-        right: -300px; /* دفعها لليمين خارج الشاشة */
-        transition: right 0.3s ease;
-    }
-
-    /* عند فتح القائمة الجانبية */
-    .sidebar-visible #sidebar {
-        right: 0 !important;
-    }
-}
-
-/* تنسيق الأكواد لتبقى من اليسار لليمين ولا تضغط النص */
-pre, code {
-    direction: ltr !important;
-    text-align: left !important;
-    white-space: pre-wrap;
-    word-break: break-all;
 }
