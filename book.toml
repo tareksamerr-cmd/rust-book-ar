@@ -4,7 +4,7 @@
 [book]
 title = "The Rust Programming Language"
 language = "ar"
-direction = "rtl"
+text-direction = "rtl"
 authors = ["Steve Klabnik", "Carol Nichols", "Chris Krycho", "Contributions from the Rust Community"]
 
 [output.html]
