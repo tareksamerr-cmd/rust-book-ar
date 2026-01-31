@@ -44,6 +44,7 @@ use-boolean-and = true
 command = "mdbook-trpl-note"
 
 [preprocessor.trpl-listing]
+optional = true
 command = "mdbook-trpl-listing"
 output-mode = "default"
 
