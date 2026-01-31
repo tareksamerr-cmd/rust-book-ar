@@ -41,6 +41,7 @@ use-boolean-and = true
 
 # تم تعديل الأوامر هنا لتجنب تعليق الـ GitHub Actions
 [preprocessor.trpl-note]
+optional = true
 command = "mdbook-trpl-note"
 
 [preprocessor.trpl-listing]
